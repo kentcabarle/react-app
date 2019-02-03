@@ -20,7 +20,7 @@ class Counter extends Component {
     // eslint-disable-next-line no-unused-expressions
     return (
       <div>
-        {this.props.children}
+        {this.props.id}
         <span className={this.getBadgeClass()}>{this.formatCount()}</span>
         <button
           onClick={this.handleIncrement}

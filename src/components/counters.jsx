@@ -17,9 +17,7 @@ class Counters extends Component {
       <div>
         {this.state.counters.map(counter => (
           // eslint-disable-next-line no-undef
-          <Counter key={counter.id} value={counter.value}>
-            <h4>Counter # {counter.id}</h4>
-          </Counter>
+          <Counter key={counter.id} value={counter.value} id={counter.id} />
         ))}
       </div>
     );
