@@ -8,7 +8,7 @@ class Counter extends Component {
   // <React.Fragment> = avoid duplicate divs
 
   render() {
-    console.log("props", this.props);
+    // console.log("props", this.props);
     // eslint-disable-next-line no-unused-expressions
     return (
       <div>
