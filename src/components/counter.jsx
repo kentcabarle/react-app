@@ -7,20 +7,20 @@ class Counter extends Component {
   // CMD + D = multiple editing
   // <React.Fragment> = avoid duplicate divs
 
-  constructor() {
-    super();
-    this.handleIncrement = this.handleIncrement.bind(this);
-  }
+  //   constructor() {
+  //     super();
+  //     this.handleIncrement = this.handleIncrement.bind(this);
+  //   }
 
   state = {
     count: 0,
     tags: ["tag1", "tag2", "tag3"]
   };
 
-  handleIncrement() {
+  handleIncrement = () => {
     // this will error
     console.log("Increment clicked.", this);
-  }
+  };
 
   render() {
     this.getBadgeClass();
