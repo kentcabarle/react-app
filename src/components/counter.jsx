@@ -6,6 +6,12 @@ class Counter extends Component {
   // imrc, cc - shortcuts boilerplate
   // CMD + D = multiple editing
   // <React.Fragment> = avoid duplicate divs
+
+  constructor() {
+    super();
+    this.handleIncrement = this.handleIncrement.bind(this);
+  }
+
   state = {
     count: 0,
     tags: ["tag1", "tag2", "tag3"]
@@ -13,7 +19,7 @@ class Counter extends Component {
 
   handleIncrement() {
     // this will error
-    console.log("Increment clicked.", this.state.count);
+    console.log("Increment clicked.", this);
   }
 
   render() {
