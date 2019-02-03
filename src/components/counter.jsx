@@ -17,8 +17,10 @@ class Counter extends Component {
 
   render() {
     console.log("props", this.props);
+    // eslint-disable-next-line no-unused-expressions
     return (
       <div>
+        {this.props.children}
         <span className={this.getBadgeClass()}>{this.formatCount()}</span>
         <button
           onClick={this.handleIncrement}

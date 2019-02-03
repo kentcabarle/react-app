@@ -12,11 +12,14 @@ class Counters extends Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <div>
         {this.state.counters.map(counter => (
           // eslint-disable-next-line no-undef
-          <Counter key={counter.id} value={counter.value} selected={true} />
+          <Counter key={counter.id} value={counter.value}>
+            <h4>Counter # {counter.id}</h4>
+          </Counter>
         ))}
       </div>
     );
