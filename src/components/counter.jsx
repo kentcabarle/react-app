@@ -12,25 +12,23 @@ class Counter extends Component {
     tags: ["tag1", "tag2", "tag3"]
   };
 
+  product = null;
+
   handleIncrement = product => {
     // this will error
     console.log(product);
     this.setState({ count: this.state.count + 1 });
   };
 
-  doHandleIncrement = e => {
-    console.log("e", e);
-    this.handleIncrement({ id: 1 });
-  };
-
   render() {
     this.getBadgeClass();
     return (
-      <React.Fragment>
+      <div>
         <span className={this.getBadgeClass()}>{this.formatCount()}</span>
         {/* onclick uses handleIncrement NOT handleIncrement() */}
         <button
-          onClick={this.doHandleIncrement}
+          // eslint-disable-next-line no-undef
+          onClick={() => this.handleIncrement(product)}
           className="btn btn-secondary btn-sm"
         >
           Increment
@@ -40,7 +38,7 @@ class Counter extends Component {
             <li key={tag}>{tag}</li>
           ))}
         </ul>
-      </React.Fragment>
+      </div>
     );
   }
 
