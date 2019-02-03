@@ -12,6 +12,8 @@ class Counter extends Component {
     tags: ["tag1", "tag2", "tag3"]
   };
 
+  product = { "name:": "Jason" };
+
   handleIncrement = product => {
     // this will error
     console.log(product);
@@ -26,7 +28,7 @@ class Counter extends Component {
         {/* onclick uses handleIncrement NOT handleIncrement() */}
         <button
           // eslint-disable-next-line no-undef
-          onClick={() => this.handleIncrement(product)}
+          onClick={() => this.handleIncrement(this.product)}
           className="btn btn-secondary btn-sm"
         >
           Increment
