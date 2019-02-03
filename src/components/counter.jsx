@@ -12,8 +12,6 @@ class Counter extends Component {
     tags: ["tag1", "tag2", "tag3"]
   };
 
-  product = null;
-
   handleIncrement = product => {
     // this will error
     console.log(product);
