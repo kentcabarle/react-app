@@ -8,7 +8,7 @@ class Counter extends Component {
   // <React.Fragment> = avoid duplicate divs
 
   state = {
-    value: this.props.value
+    value: this.props.counter.value
   };
 
   handleIncrement = () => {
@@ -20,13 +20,18 @@ class Counter extends Component {
     // eslint-disable-next-line no-unused-expressions
     return (
       <div>
-        {this.props.id}
         <span className={this.getBadgeClass()}>{this.formatCount()}</span>
         <button
           onClick={this.handleIncrement}
           className="btn btn-secondary btn-sm"
         >
           Increment
+        </button>
+        <button
+          onClick={() => this.props.onDelete(this.props.counter.id)}
+          className="btn btn-danger btn-sm m-2"
+        >
+          Delete
         </button>
       </div>
     );
@@ -42,6 +47,8 @@ class Counter extends Component {
     const { value } = this.state;
     return value === 0 ? "Zero" : value;
   }
+
+  handleDelete() {}
 }
 
 export default Counter;
