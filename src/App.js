@@ -13,6 +13,15 @@ class App extends Component {
     ]
   };
 
+  constructor(props) {
+    super(props);
+    console.log("App - Constructor");
+  }
+
+  componentDidMount() {
+    console.log("App - Mounted");
+  }
+
   handleDelete = counterId => {
     console.log("Event Handler called", counterId);
     const counters = this.state.counters.filter(c => c.id !== counterId);
@@ -38,6 +47,7 @@ class App extends Component {
   };
 
   render() {
+    console.log("App - Rendered");
     return (
       <React.Fragment>
         <NavBar
