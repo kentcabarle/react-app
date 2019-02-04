@@ -7,6 +7,13 @@ class Counter extends Component {
   // CMD + D = multiple editing
   // <React.Fragment> = avoid duplicate divs
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log(`${prevProps.counter.value} -> ${this.props.counter.value}`);
+    if (prevProps.counter.value !== this.props.counter.value) {
+      console.log("Props counter value has changed!");
+    }
+  }
+
   render() {
     console.log("Counter - Rendered");
     // console.log("props", this.props);
